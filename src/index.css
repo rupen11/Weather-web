@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 .underline-top {
@@ -15,110 +16,56 @@
   margin: 1rem 0;
 }
 
-.content {
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  color: white;
-}
-
 body {
   background: url("./bk.jpg") no-repeat center center/cover;
   background-attachment: fixed;
 }
-
-.content::after {
-  content: "";
-  background: black;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  opacity: 0.5;
-}
-
-.content .contentbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-}
-
-.content .contentbox .contentbox-gid {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.content .contentbox .contentbox-gid h1 {
-  text-transform: capitalize;
-  font-size: 4rem;
-  font-weight: 900;
-  word-spacing: 1rem;
-}
-
-.content .contentbox .contentbox-gid p {
-  text-align: center;
-  margin-top: 0.5rem;
-  color: rgb(192, 192, 192);
-}
-
 #header {
   background-color: rgba(116, 99, 209, 0.904);
   color: white;
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  padding: 10px 0;
 }
 
-#header .menubar {
+#header .innerheader {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
 }
 
-#header .timezone {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
-}
-
-#header .timezone h6 {
+#header .timezone h5 {
   font-weight: 300;
   letter-spacing: 1px;
+  margin: 0;
 }
 
 #header .menubar h1 {
   font-size: 2rem;
   font-weight: 600;
+  margin: 0;
 }
 
+/* weather */
 #weather {
-  padding: 10rem 0;
-  background-color: rgba(216, 216, 216, 0.363);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #weather .weather_searchbox {
-  padding-bottom: 2rem;
+  padding-bottom: 37px;
 }
 
 #weather .weather_searchbox .myinput {
   width: 13rem;
-  padding: 0.3rem;
+  padding: 10px 0 10px 5px;
   font-size: 1rem;
   border: 1px solid rgb(115, 99, 209);
-  border-radius: 3px;
+  border-radius: 4px;
   outline: none;
   transition: 0.5s;
+  width: 300px;
+  width: 300px;
 }
 
 #weather .weather_searchbox .myinput:focus {
@@ -136,6 +83,10 @@ body {
   text-align: center;
 }
 
+#weather .weather_box .current_weather img {
+  width: 40px;
+}
+
 #weather .weather_box .current_weather h5 {
   display: inline-block;
   margin-right: 0.3rem;
@@ -143,6 +94,7 @@ body {
 
 #weather .weather_info {
   width: 70%;
+  max-width: 100%;
   background-color: rgb(115, 99, 209);
   color: white;
   padding: 1rem 0.5rem;
@@ -219,63 +171,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 100%;
 }
 
 #weather .weather_image img {
-  width: 70%;
-  height: 100%;
+  width: 60%;
 }
 
-@media screen and (max-width: 768px) {
-  .content .contentbox .contentbox-gid h1 {
-    font-size: 3rem;
-    margin-top: 3rem;
-  }
-  .content .contentbox .contentbox-gid p {
-    text-align: left;
-  }
-  #header .timezone h6 {
-    font-size: 0.8rem;
-  }
-  #header .menubar h1 {
-    font-size: 1.5rem;
+@media only screen and (max-width: 768px) {
+  #weather .weather_image {
+    padding: 30px 0;
   }
   #weather .weather_info {
     width: 100%;
   }
-  #weather .weather_image {
-    margin-top: 3rem;
-  }
-  #weather .weather_image img {
-    width: 90%;
-  }
-  #weather {
-    padding: 5rem 0;
-  }
 }
 
-@media screen and (max-width: 500px) {
-  .content .contentbox .contentbox-gid h1 {
-    margin: 0;
-  }
-  .content .contentbox .contentbox-gid p {
-    text-align: left;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    line-height: 1.5rem;
-  }
-  #weather .air .airbox p {
-    font-size: 0.7rem;
-  }
-  #weather .air .airbox h6 {
-    font-size: 0.6rem;
-  }
+/* Footer */
+#footer {
+  background-color: rgba(0, 0, 0, 0.507);
+  padding: 5px 0;
 }
 
-@media screen and (max-width: 1000px) {
-  .content .contentbox .contentbox-gid h1 {
-    font-size: 4rem;
-  }
+#footer p {
+  color: rgb(206, 206, 206);
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 300;
 }
